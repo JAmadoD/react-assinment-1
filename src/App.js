@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import UserInput from './UserInput/UserInput';
+import UserOutput from './UserOutput/UserOutput';
  
 
 class App extends Component {
@@ -17,14 +18,16 @@ class App extends Component {
         return (
             <div className="App">
                 <h1>This is a Header</h1>
-                <div id='userOutput'>
-                    <p>This is Paragraph 1</p>
-                    <p>This is Paragraph 2</p>                        
-                </div>
+                <UserOutput
+                    name={this.state.name}
+                    changed={this.nameHandler}  
+                >
+                    general Kenobi
+                </UserOutput>
                 <UserInput
                     name={this.state.name}
                     changed={this.nameHandler}
-                >Hello there Obi Wan</UserInput>
+                >Hello there</UserInput>
                 
                 
                 
