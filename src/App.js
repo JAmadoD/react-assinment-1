@@ -4,21 +4,12 @@ import UserInput from './UserInput/userInput';
 
 class App extends Component {
 
-    nameHandler = (newName) => {
-        this.setState({
-            userInputs: [
-                {name: newName}]
-        }
-        )
-    }
 
+    state = { name: "Joshua" };
 
-    userNameSwitch = (event) => {
-        this.setState({
-            userInputs: [
-                {name: event.target.value}
-            ]
-        })
+    nameHandler = (e) => {
+        const newName = e.target.value;
+        this.setState({ name: newName })
     }
 
     render() {
@@ -32,7 +23,7 @@ class App extends Component {
                 </div>
                 <UserInput
                     name="joshua"
-                    changed={this.userNameSwitch.name}
+                    changed={this.nameHandler.name}
                 >Hello there</UserInput>
                 
                 
